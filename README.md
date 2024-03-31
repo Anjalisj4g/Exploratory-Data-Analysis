@@ -16,27 +16,51 @@ http://localhost:8888/lab/tree/Entri_Class/Python/Assignments/ModuleEnd_Assignme
 The first step is data preprocessing and checking for data consistency and integrity.
 Data in 'Height' column is incorrect. So, I replaced it with random numbers between 150 and 180 using random function.
 
-        __random_heights = np.random.randint(150, 181, size=len(df))__
+        random_heights = np.random.randint(150, 181, size=len(df))
         
 The dataframe is checked for any null values and replaced them with 'Unknown'.
 To determine the distribution of employees across each team, the value_counts function and sum function is applied in 'Team' column. Total number of employees in each team is derived.
 
-        __print("Total Number of Employees =",df['Team'].value_counts().sum())__
+        print("Total Number of Employees =",df['Team'].value_counts().sum())
 
 To calculate the percentage split relative to the number of employees, number of employees in each team is represented in a pie chart with their respective percentages.
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/21f2e38e-b4e2-4f56-80ef-d25072158ea9)
 
 To segregate employees based on their positions within the company, value counts function is applied in 'Position' column. Total number of employees in each position is derived.
 
-       __position_count=df['Position'].value_counts()__
+       position_count=df['Position'].value_counts()
 
 The distribution of employees in each position is represented using a count plot.
-![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/dff96679-16d9-495d-9ea1-8b745577cb1e)
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/ee43ae86-4b21-4038-9591-0cd8c0b24f6c)
 
 To identify the predominant age group among the employees, they are grouped in age groups 18-25, 25-30, 30-35, 35-42 using the code below.
-       __df['Age Group'] = pd.cut(df['Age'], bins=age_groups, labels=labels[:-1], right=False)
+      
+       df['Age Group'] = pd.cut(df['Age'], bins=age_groups, labels=labels[:-1], right=False)
        age_group_counts = df['Age Group'].value_counts()
-       predominant_age_group = age_group_counts.idxmax()__
+       predominant_age_group = age_group_counts.idxmax()
+
+To represent employees in age groups, histogram is used.
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/4ec4b7bd-dd45-483a-b4fb-d665a196d521)
+
+To discover the team and position with highest salary expenditure, group employees based on teams and position separately by groupby function.
+        grouped_by_team = df.groupby('Team')['Salary'].sum().reset_index()
+        grouped_by_position = df.groupby('Position')['Salary'].sum().reset_index()
+
+Now, take the maximum value of employees in team and position to find the team and position with highest salary expenditure.
+
+        max_salary_team = grouped_by_team.loc[grouped_by_team['Salary'].idxmax()]
+        max_salary_position = grouped_by_position.loc[grouped_by_position['Salary'].idxmax()]
+
+To represent this graphically, bar graph is used.
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/37c1d837-fcd3-4931-855d-032f398d3324)
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/1b867d44-6437-4899-ad26-1df5eb10500d)
+
+To investigate if there is any correlation between Age and Salary, corr() function is applied. Using this function, we can create a Correlation Matrix of employee details.
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/438792e1-b73a-4aac-899d-5bd370e8dda5)
+
+
+
+
 
 
 
