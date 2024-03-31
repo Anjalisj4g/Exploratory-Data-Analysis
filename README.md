@@ -35,9 +35,10 @@ To segregate employees based on their positions within the company, value counts
        position_count=df['Position'].value_counts()
 
 The distribution of employees in each position is represented using a count plot.
+
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/ee43ae86-4b21-4038-9591-0cd8c0b24f6c)
 
-To identify the predominant age group among the employees, they are grouped in age groups 18-25, 25-30, 30-35, 35-42 using the code below.
+To identify the predominant age group among the employees, they are grouped into age groups 18-25, 25-30, 30-35, 35-42 using the code below.
       
        df['Age Group'] = pd.cut(df['Age'], bins=age_groups, labels=labels[:-1], right=False)
        age_group_counts = df['Age Group'].value_counts()
@@ -52,7 +53,7 @@ To discover the team and position with highest salary expenditure, group employe
         grouped_by_team = df.groupby('Team')['Salary'].sum().reset_index()
         grouped_by_position = df.groupby('Position')['Salary'].sum().reset_index()
 
-Now, take the maximum value of employees in team and position to find the team and position with highest salary expenditure.
+Now, to find the team and position with highest salary expenditure, take the maximum value of salaries of employees in team and position .
 
         max_salary_team = grouped_by_team.loc[grouped_by_team['Salary'].idxmax()]
         max_salary_position = grouped_by_position.loc[grouped_by_position['Salary'].idxmax()]
