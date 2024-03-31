@@ -12,9 +12,17 @@ The dataset is all about the details of employees regarding their Name, Team, Nu
 The project is done on  jupyter notebook. The language used is python. 
 First of all, I have imported tools like numpy, pandas, matplotlib and seaborn. Then, the dataset is read as dataframe df. The dataset is given below :
 http://localhost:8888/lab/tree/Entri_Class/Python/Assignments/ModuleEnd_Assignment/Employee_Report.csv
+
 The first step is data preprocessing and checking for data consistency and integrity.
 Data in 'Height' column is incorrect. So, I replaced it with random numbers between 150 and 180 using random function.
-        random_heights = np.random.randint(150, 181, size=len(df))
-The, the dataframe is checked for any null values and replaced them with 'Unknown'.
+
+        *random_heights = np.random.randint(150, 181, size=len(df))*
+        
+The dataframe is checked for any null values and replaced them with 'Unknown'.
 To determine the distribution of employees across each team, the value_counts function and sum function is applied in 'Team' column.
-        print("Total Number of Employees =",df['Team'].value_counts().sum())
+
+        *print("Total Number of Employees =",df['Team'].value_counts().sum())*
+
+To calculate the percentage split relative to the number of employees, number of employees in each team is represented in a pie chart with their respective percentages.
+![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/30299e0d-473a-4050-b4ed-7cff32c39159)
+
