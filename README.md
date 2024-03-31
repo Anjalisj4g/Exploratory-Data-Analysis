@@ -40,9 +40,11 @@ To identify the predominant age group among the employees, they are grouped in a
        predominant_age_group = age_group_counts.idxmax()
 
 To represent employees in age groups, histogram is used.
+
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/4ec4b7bd-dd45-483a-b4fb-d665a196d521)
 
 To discover the team and position with highest salary expenditure, group employees based on teams and position separately by groupby function.
+
         grouped_by_team = df.groupby('Team')['Salary'].sum().reset_index()
         grouped_by_position = df.groupby('Position')['Salary'].sum().reset_index()
 
@@ -52,12 +54,21 @@ Now, take the maximum value of employees in team and position to find the team a
         max_salary_position = grouped_by_position.loc[grouped_by_position['Salary'].idxmax()]
 
 To represent this graphically, bar graph is used.
+
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/37c1d837-fcd3-4931-855d-032f398d3324)
+
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/1b867d44-6437-4899-ad26-1df5eb10500d)
 
 To investigate if there is any correlation between Age and Salary, corr() function is applied. Using this function, we can create a Correlation Matrix of employee details.
+
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/438792e1-b73a-4aac-899d-5bd370e8dda5)
 
+## Insights
+* Most number of employees are in team New Orleans Pelicans with 4.1% of the total number of employees followed by team Memphis Grizzlies with 3.9%.
+* Most number of employees are in position SG followed by position PF. The least number of employees are in position C.
+* Employees of age group 25-30 are the predominant group followed by age group 18-25. Employees of age group 35-40 are least dominant in the data.
+*  Team with Highest Salary Expenditure is Memphis Grizzlies and team with Least Salary Expenditure is Orlando Magic. Also, Position with Highest Salary Expenditure is PF and position with least Salary Expenditure is C.
+*  From the correlation matrix, the correlation coefficient of age and salary is exactly 1. This means that there is a strong positive linear relationship between these two variables. This indicates that as age increases, salary also increases proportionally and vice-versa. Through this relationship, we can predict the salary of an employee by knowing his/her age. 
 
 
 
