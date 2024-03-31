@@ -64,7 +64,7 @@ To represent this graphically, bar graph is used.
 
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/1b867d44-6437-4899-ad26-1df5eb10500d)
 
-To investigate if there is any correlation between Age and Salary, corr() function is applied. Using this function, we can create a Correlation Matrix of employee details.
+To investigate if there is any correlation between Age and Salary, corr function is used. Using this function, we can create a Correlation Matrix of employee details.
 
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/438792e1-b73a-4aac-899d-5bd370e8dda5)
 
