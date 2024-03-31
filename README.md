@@ -75,8 +75,3 @@ To investigate if there is any correlation between Age and Salary, corr function
 *  Team with Highest Salary Expenditure is Memphis Grizzlies and team with Least Salary Expenditure is Orlando Magic. Also, Position with Highest Salary Expenditure is PF and position with least Salary Expenditure is C.
 *  From the correlation matrix, the correlation coefficient of age and salary is exactly 1. This means that there is a strong positive linear relationship between these two variables. This indicates that as age increases, salary also increases proportionally and vice-versa. Through this relationship, we can predict the salary of an employee by knowing his/her age. 
 
-
-
-
-
-
