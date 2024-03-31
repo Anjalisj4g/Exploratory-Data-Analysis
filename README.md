@@ -25,6 +25,9 @@ To determine the distribution of employees across each team, the value_counts fu
         print("Total Number of Employees =",df['Team'].value_counts().sum())
 
 To calculate the percentage split relative to the number of employees, number of employees in each team is represented in a pie chart with their respective percentages.
+
+        plt.pie(Teams, labels=Teams.index, autopct='%1.1f%%',startangle=140)
+        
 ![image](https://github.com/Anjalisj4g/Exploratory-Data-Analysis/assets/162909803/21f2e38e-b4e2-4f56-80ef-d25072158ea9)
 
 To segregate employees based on their positions within the company, value counts function is applied in 'Position' column. Total number of employees in each position is derived.
