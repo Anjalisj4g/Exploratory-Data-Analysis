@@ -19,6 +19,7 @@ Data in 'Height' column is incorrect. So, I replaced it with random numbers betw
         random_heights = np.random.randint(150, 181, size=len(df))
         
 The dataframe is checked for any null values and replaced them with 'Unknown'.
+
 To determine the distribution of employees across each team, the value_counts function and sum function is applied in 'Team' column. Total number of employees in each team is derived.
 
         print("Total Number of Employees =",df['Team'].value_counts().sum())
